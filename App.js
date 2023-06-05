@@ -1,30 +1,40 @@
 const express = require('express');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const celebrateErrors = require('celebrate').errors;
-const { requestLogger, errorLogger } = require('./middlewares/logger');
+const {
+  requestLogger,
+  errorLogger,
+} = require('./middlewares/logger');
 const handleGeneralError = require('./middlewares/handleGeneralError');
 const corsFilters = require('./middlewares/cors');
 const { checkAuthorizedUser } = require('./middlewares/auth');
+const rateLimiter = require('./middlewares/rateLimit');
 
 const auth = require('./routes/auth');
 const users = require('./routes/users');
 const movies = require('./routes/movies');
-const rateLimiter = require('./middlewares/rateLimit');
+const notFoundPage = require('./routes/notFound');
 
 /**
  * Подключение переменных из .env
  */
-require('dotenv').config();
+require('dotenv')
+  .config();
 
-const { PORT = 3001, MONGO_DB_URI = 'mongodb://127.0.0.1:27017/moviedb' } = process.env;
+const {
+  PORT = 3001,
+  MONGO_DB_URI = 'mongodb://127.0.0.1:27017/moviedb',
+} = process.env;
 
 /**
  * Подключение к базе данных
  */
-mongoose.connect(MONGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGO_DB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
   .then(() => console.log('Database connection successful'))
   .catch((err) => console.error('Database connection error', err));
 
@@ -50,8 +60,8 @@ app.use(requestLogger);
  * Разные middleware
  */
 app.use(helmet());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 /**
@@ -65,6 +75,7 @@ app.use(corsFilters);
 app.use('/', auth);
 app.use('/users', checkAuthorizedUser, users);
 app.use('/movies', checkAuthorizedUser, movies);
+app.use(notFoundPage);
 
 /**
  * Подключаем логгер ошибок

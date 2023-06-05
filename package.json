@@ -2,7 +2,7 @@
   "name": "movies-explorer-api",
   "description": "",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "App.js",
   "scripts": {
     "start": "node app.js",
     "lint": "npx eslint .",
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/TIPDMR/movies-explorer-api.git"
   },
-  "author": "",
+  "author": "Tipsin Dmitriy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TIPDMR/movies-explorer-api/issues"
@@ -27,9 +27,7 @@
     "nodemon": "^2.0.22"
   },
   "dependencies": {
-    "@types/mongoose": "^5.11.97",
     "bcrypt": "^5.1.0",
-    "body-parser": "^1.20.2",
     "celebrate": "^15.0.1",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.1.3",

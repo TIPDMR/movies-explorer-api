@@ -49,7 +49,6 @@ module.exports.createMovie = (req, res, next) => {
 module.exports.deleteMovie = (req, res, next) => {
   const { id } = req.params;
   const userId = req.user._id;
-  const deleteMovie = (_id) => Movie.findOneAndDelete(_id);
 
   Movie.findById({ _id: id })
     .orFail()
@@ -57,8 +56,7 @@ module.exports.deleteMovie = (req, res, next) => {
       if (movie.owner._id.valueOf() !== userId) {
         return next(new Forbidden('Доступ запрещен'));
       }
-      return deleteMovie(movie._id)
-        .then((delMovie) => res.send(delMovie));
-    })
+      return movie.deleteOne();
+    }).then((delMovie) => res.send(delMovie))
     .catch((err) => errorHandler(err, res, next));
 };
