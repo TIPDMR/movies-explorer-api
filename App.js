@@ -34,9 +34,7 @@ const {
 mongoose.connect(MONGO_DB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-})
-  .then(() => console.log('Database connection successful'))
-  .catch((err) => console.error('Database connection error', err));
+});
 
 /**
  * Запуск приложения
