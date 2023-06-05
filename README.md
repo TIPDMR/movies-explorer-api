@@ -1,4 +1,4 @@
-# **Дипломный проект Movies Explorer**
+# **Дипломный проект: Movies REST API**
 ## Технологии
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
@@ -15,7 +15,7 @@ ___
 
 ## Описание
 
-**Movies Explorer API** - это сервер для проекта Movies Explorer, выполняющий роль интерфейса между базой данных проекта и
+**Movies Explorer REST API** - это сервер для проекта Movies Explorer, выполняющий роль интерфейса между базой данных проекта и
 клиентом.
 
 **Movies Explorer** - это веб-приложение, позволяющее пользователям искать фильмы, сохранять в свою личную коллекцию и
@@ -57,6 +57,7 @@ ___
 
 
 ## Ссылка на проект
-Movies Explorer API: https://api.movies.best-mesto.ru
+Movies Explorer REST API: https://api.movies.best-mesto.ru
+Movies Explorer REST API: http://api.movies.best-mesto.ru
 
 IP: 80.243.140.219
