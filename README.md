@@ -57,6 +57,6 @@ ___
 
 
 ## Ссылка на проект
-Movies Explorer API: https://api.diplom.best-mesto.ru
+Movies Explorer API: https://api.movies.best-mesto.ru
 
 IP: 80.243.140.219
