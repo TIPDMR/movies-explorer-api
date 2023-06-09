@@ -3,19 +3,14 @@ const helmet = require('helmet');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const celebrateErrors = require('celebrate').errors;
+const router = require('./routes/index');
 const {
   requestLogger,
   errorLogger,
 } = require('./middlewares/logger');
 const handleGeneralError = require('./middlewares/handleGeneralError');
 const corsFilters = require('./middlewares/cors');
-const { checkAuthorizedUser } = require('./middlewares/auth');
 const rateLimiter = require('./middlewares/rateLimit');
-
-const auth = require('./routes/auth');
-const users = require('./routes/users');
-const movies = require('./routes/movies');
-const notFoundPage = require('./routes/notFound');
 
 /**
  * Подключение переменных из .env
@@ -70,10 +65,7 @@ app.use(corsFilters);
 /**
  * Роуты приложения
  */
-app.use('/', auth);
-app.use('/users', checkAuthorizedUser, users);
-app.use('/movies', checkAuthorizedUser, movies);
-app.use(notFoundPage);
+app.use(router);
 
 /**
  * Подключаем логгер ошибок
