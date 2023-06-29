@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "main": "App.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node App.js",
     "lint": "npx eslint .",
-    "dev": "nodemon node app.js",
+    "dev": "nodemon node App.js",
     "debug": "node --inspect app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
