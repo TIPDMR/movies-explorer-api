@@ -14,5 +14,4 @@ module.exports.ALLOWED_DOMAIN_NAME = [
 
   'http://api.movies.best-mesto.ru',
   'https://api.movies.best-mesto.ru',
-
 ];
