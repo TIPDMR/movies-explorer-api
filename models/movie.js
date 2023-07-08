@@ -20,10 +20,10 @@ const urlField = (field) => ({
 
 const movieScheme = new mongoose.Schema({
   country: {
-    ...stringField('Страна', 3, 30),
+    ...stringField('Страна', 3, 100),
   },
   director: {
-    ...stringField('Режиссёр', 2, 30),
+    ...stringField('Режиссёр', 2, 100),
   },
   duration: {
     type: Number,
