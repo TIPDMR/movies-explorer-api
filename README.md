@@ -18,7 +18,7 @@ ___
 **Movies Explorer REST API** - это сервер для проекта Movies Explorer, выполняющий роль интерфейса между базой данных проекта и
 клиентом.
 
-**Movies Explorer** - это веб-приложение, позволяющее пользователям искать фильмы, сохранять в свою личную коллекцию и
+**[Movies Explorer](https://github.com/TIPDMR/movies-explorer-frontend)** - это веб-приложение, позволяющее пользователям искать фильмы, сохранять в свою личную коллекцию и
 управлять ей.
 
 ___
@@ -39,26 +39,34 @@ ___
 
 1) Клонируйте репозиторий на ваш компьютер.
 
-
-    git clone https://github.com/TIPDMR/movies-explorer-api
+```
+git clone https://github.com/TIPDMR/movies-explorer-api
+```
 
 2) Установите зависимости проекта.
 
+```
+cd movies-explorer-api && npm install
+```
+3) Наcтройте CORS
 
-    cd projectname
-    npm install
-
-3) Запустите сервер.
+    1. Откройте файл `utils/constants.js`
+    2. Добавьте ваш домен в константу `ALLOWED_DOMAIN_NAME`
 
 
-    npm run start
+4) Запустите сервер.
+
+```
+npm run start
+```
 
 Ваш сервер будет запущен и готов к использованию. В случае разработки можно использовать команду `npm run dev` для запуска сервера с функцией hot-reload.
 
 
-## Ссылка на проект
-Movies Explorer REST API: https://api.movies.best-mesto.ru
+## Ссылки
 
-Movies Explorer REST API: http://api.movies.best-mesto.ru
+Backend Movies Explorer REST API: https://api.movies.best-mesto.ru
 
-IP: 80.243.140.219
+Frontend Movies Explorer: https://movies.best-mesto.ru
+
+Frontend Movies Explorer Source Code: https://movies.best-mesto.ru
